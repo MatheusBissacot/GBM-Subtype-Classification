@@ -10,7 +10,7 @@ Mesenchymal subtype (1): Prognostically adverse
 Both unsupervised and supervised machine learning methods are applied to explore and predict these subtypes.
 
 ## 🔍 Project Objectives
-1. Unsupervised Analysis: Subtype Structure Exploration
+### 1. **Unsupervised Analysis: Subtype Structure Exploration**
 Dimensionality reduction techniques: PCA and UMAP
 Clustering algorithms: K-Means and Hierarchical Clustering
 Cluster validation using Adjusted Rand Index (ARI)
