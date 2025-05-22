@@ -1,39 +1,42 @@
-# 🎗️ GBM Subtype Classification (Glioblastoma Multiforme)
+##🎗️ GBM Subtype Classification (Glioblastoma Multiforme)
+### Second assignment of the course Bioinformatics (MSc in Artificial Intelligence, 1st year, 2st semester)
 
-This project tackles the problem of classifying molecular subtypes of **Glioblastoma Multiforme (GBM)** — one of the most aggressive brain tumors — using **gene expression data**. Both **unsupervised** and **supervised** machine learning approaches are explored to distinguish between:
+This project addresses the classification of molecular subtypes of Glioblastoma Multiforme (GBM)—one of the most aggressive brain tumors—leveraging gene expression data. The objective is to distinguish between:
 
-- **Classical subtype** (0) – Prognostically favorable
-- **Mesenchymal subtype** (1) – Prognostically adverse
+Classical subtype (0): Prognostically favorable
 
----
+Mesenchymal subtype (1): Prognostically adverse
+
+Both unsupervised and supervised machine learning methods are applied to explore and predict these subtypes.
 
 ## 🔍 Project Objectives
+1. Unsupervised Analysis: Subtype Structure Exploration
+Dimensionality reduction techniques: PCA and UMAP
 
-1. **Explore subtype structure** using unsupervised methods:
-   - PCA, UMAP
-   - K-Means and Hierarchical Clustering
-   - Evaluation with Adjusted Rand Index (ARI)
+Clustering algorithms: K-Means and Hierarchical Clustering
 
-2. **Build binary classifiers** for subtype prediction:
-   - Support Vector Machine (SVM)
-   - Random Forest (RF)
-   - 4-Fold Cross-Validation with feature selection (ANOVA F-test)
-   - Metrics: Accuracy, Precision, Recall, F1-score (mean ± std across folds)
-  
-  ---
+Cluster validation using Adjusted Rand Index (ARI)
+
+### 2.**Supervised Learning: Binary Classification of GBM Subtypes**
+Models implemented:
+ - Support Vector Machine (SVM)
+ - Random Forest (RF)
+
+Rigorous evaluation using 4-fold cross-validation
+Feature selection via ANOVA F-test to identify the most relevant genes
+Performance metrics reported as mean ± standard deviation across folds:
+   - Accuracy
+   - Precision
+   - Recall
+   - F1-score
 
 ## 🛠️ Tools & Libraries
 Python 3.8+
 
-scikit-learn – ML models and metrics
+You can find a text file "requirements.txt" with all the libraries and versions
 
-umap-learn – dimensionality reduction
+## 👥 Contributors
 
-matplotlib, seaborn – visualization
+Gonçalo Brochado up202106090
 
-pandas, numpy – data handling
-
-👥 Contributors
-[Gonçalo Brochado]
-
-[Matheus Bissacot]
+Matheus Bissacot up202106708
