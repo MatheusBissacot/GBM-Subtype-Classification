@@ -11,8 +11,11 @@ Both unsupervised and supervised machine learning methods are applied to explore
 
 ## 🔍 Project Objectives
 ### 1. **Unsupervised Analysis: Subtype Structure Exploration**
+
 Dimensionality reduction techniques: PCA and UMAP
+
 Clustering algorithms: K-Means and Hierarchical Clustering
+
 Cluster validation using Adjusted Rand Index (ARI)
 
 ### 2.**Supervised Learning: Binary Classification of GBM Subtypes**
