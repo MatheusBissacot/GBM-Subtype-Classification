@@ -31,6 +31,37 @@ Performance metrics reported as mean ± standard deviation across folds:
    - Recall
    - F1-score
 
+## 📊 Results
+
+### Unsupervised analysis
+PCA showed the two subtypes have some non-linear structure but no clean linear
+separation (119 components were needed to retain 90% of the variance). UMAP improved
+the visual separation, especially after first reducing with PCA, though overlap
+remained. Clustering validated this: K-Means and Hierarchical Clustering barely aligned
+with the true labels (ARI of 0.045, 0.015, and 0.002 respectively), while DBSCAN on the
+UMAP embedding did notably better (ARI = 0.223), suggesting the subtypes are
+differentiated but not separable by simple unsupervised methods on the full feature space.
+
+### Supervised analysis
+Using stratified 5-fold cross-validation, SVM (with and without class balancing) was the
+best-performing base model overall, ahead of Random Forest and XGBoost. Hyperparameter
+tuning and feature-count experiments (via ANOVA F-test selection) showed:
+- SVM peaked at 140 selected features (F1 = 0.941).
+- The tuned Random Forest (200 trees) reached F1 = 0.932 ± 0.013 with 200 features, with
+  lower variance than its untuned counterpart.
+- A soft **VotingClassifier** ensemble (SVM + RF + XGBoost) matched but did not exceed
+  the standalone SVM.
+
+**Best model — SVM**: accuracy 93.7%, precision 92.1%, recall 96.2%, F1-score 94.1%.
+**Voting Ensemble**: accuracy 93.4%, precision 92.2%, recall 95.5%, F1-score 93.7%.
+
+### Conclusion
+SVM was the most effective and efficient classifier for this task, offering the best
+balance between precision and recall. Ensemble methods added robustness/stability but no
+clear performance gain over SVM alone. Future work could explore further hyperparameter
+optimization, alternative ensemble strategies, and growing the dataset to address its
+small size and class imbalance.
+
 ## 🛠️ Tools & Libraries
 Python 3.8+
 
